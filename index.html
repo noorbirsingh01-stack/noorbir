@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>noorbir.co | Systems & AI Services</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo">
+        <span class="logo-icon"></span>
+        <span class="logo-text">noorbir<strong>.co</strong></span>
+      </div>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#intake" class="nav-cta">Book Discovery</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="container hero-content">
+        <span class="badge">Accelerated Business Delivery</span>
+        <h1 class="hero-title">Automate Your Operations.<br><span class="gradient-text">Reclaim 20+ Hours Every Week.</span></h1>
+        <p class="hero-subtitle">We design and deploy custom n8n workflows, headless stores, and Supabase client portals that replace manual busywork with reliable software.</p>
+        <div class="hero-actions">
+          <a href="#pricing" class="btn btn-primary">View Solution Tiers</a>
+          <a href="#intake" class="btn btn-secondary">Request Free Audit</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section id="pricing" class="pricing-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Transparent Project Tiers</h2>
+          <p>Fixed-scope delivery. No surprise fees. Built to scale your business run-rate.</p>
+          
+          <!-- BILLING / PERIOD TOGGLE -->
+          <div class="billing-toggle">
+            <span class="toggle-label active" id="label-project">One-Time Project</span>
+            <button class="toggle-switch" id="billingToggle" aria-label="Toggle pricing mode"></button>
+            <span class="toggle-label" id="label-retainer">Monthly Retainer <span class="discount-pill">Save 20%</span></span>
+          </div>
+        </div>
+
+        <div class="pricing-grid">
+          
+          <!-- TIER 1: STARTER AUTOMATION -->
+          <div class="pricing-card" data-tier="Starter Workflow">
+            <div class="card-header">
+              <span class="tier-pill">Tier 1</span>
+              <h3>Starter Automation</h3>
+              <p class="tier-desc">Ideal for small businesses drowning in manual lead management and calendar bookings.</p>
+              <div class="price-box">
+                <span class="currency">$</span>
+                <span class="price-amount" data-project="500" data-retainer="400">500</span>
+                <span class="price-period">/project</span>
+              </div>
+            </div>
+            <ul class="feature-list">
+              <li><span>✓</span> 1 Production n8n or Make.com Workflow</li>
+              <li><span>✓</span> Lead Capture Form & CRM Sync (Airtable / Sheets)</li>
+              <li><span>✓</span> Automated Instant Email / SMS Notification</li>
+              <li><span>✓</span> 7 Days Deployment Support</li>
+            </ul>
+            <button class="btn btn-outline select-tier-btn" data-plan="Starter Automation ($500)">Select Starter</button>
+          </div>
+
+          <!-- TIER 2: GROWTH ENGINE (FEATURED) -->
+          <div class="pricing-card featured" data-tier="Growth Engine">
+            <div class="popular-ribbon">Most Popular</div>
+            <div class="card-header">
+              <span class="tier-pill tier-pill-accent">Tier 2</span>
+              <h3>Growth Engine</h3>
+              <p class="tier-desc">End-to-end integration across booking, customer intake, and automated billing.</p>
+              <div class="price-box">
+                <span class="currency">$</span>
+                <span class="price-amount" data-project="1,500" data-retainer="1,200">1,500</span>
+                <span class="price-period">/project</span>
+              </div>
+            </div>
+            <ul class="feature-list">
+              <li><span>✓</span> Up to 4 Multi-Step Automated Workflows</li>
+              <li><span>✓</span> Cal.com Custom White-Label Booking Integration</li>
+              <li><span>✓</span> Stripe / Payment Gateway Webhook Setup</li>
+              <li><span>✓</span> Error Alerting & Database Logging</li>
+              <li><span>✓</span> 14 Days Priority Support</li>
+            </ul>
+            <button class="btn btn-primary select-tier-btn" data-plan="Growth Engine ($1,500)">Select Growth</button>
+          </div>
+
+          <!-- TIER 3: FULL ARCHITECTURE -->
+          <div class="pricing-card" data-tier="Custom Platform">
+            <div class="card-header">
+              <span class="tier-pill">Tier 3</span>
+              <h3>Custom Platform</h3>
+              <p class="tier-desc">Complete micro-SaaS or headless e-commerce store with authentication and database.</p>
+              <div class="price-box">
+                <span class="currency">$</span>
+                <span class="price-amount" data-project="3,000" data-retainer="2,400">3,000</span>
+                <span class="price-period">/project</span>
+              </div>
+            </div>
+            <ul class="feature-list">
+              <li><span>✓</span> Full Supabase Backend & Database Architecture</li>
+              <li><span>✓</span> Medusa.js E-Commerce or Custom Client Portal</li>
+              <li><span>✓</span> User Authentication, Roles & Protected Dashboards</li>
+              <li><span>✓</span> End-to-end API Integration & Deployment</li>
+              <li><span>✓</span> 30 Days Dedicated Maintenance & Warranty</li>
+            </ul>
+            <button class="btn btn-outline select-tier-btn" data-plan="Custom Platform ($3,000)">Select Platform</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- INTAKE FORM SECTION -->
+    <section id="intake" class="intake-section">
+      <div class="container intake-container">
+        <div class="intake-info">
+          <span class="badge">Direct Project Kickoff</span>
+          <h2>Ready to Deploy Your Solution?</h2>
+          <p>Fill out the project scope below. We review every requirement and return an actionable execution roadmap within 24 hours.</p>
+          <div class="trust-metrics">
+            <div class="metric-item">
+              <strong>48-72h</strong>
+              <span>Rapid Prototype Delivery</span>
+            </div>
+            <div class="metric-item">
+              <strong>100%</strong>
+              <span>Code Ownership</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="intake-form" id="leadForm">
+          <div class="form-group">
+            <label for="clientName">Full Name *</label>
+            <input type="text" id="clientName" required placeholder="Alex Mercer">
+          </div>
+
+          <div class="form-group">
+            <label for="clientEmail">Business Email *</label>
+            <input type="email" id="clientEmail" required placeholder="alex@mercergrowth.com">
+          </div>
+
+          <div class="form-group">
+            <label for="selectedTier">Selected Tier *</label>
+            <select id="selectedTier" required>
+              <option value="Starter Automation ($500)">Starter Automation ($500)</option>
+              <option value="Growth Engine ($1,500)" selected>Growth Engine ($1,500)</option>
+              <option value="Custom Platform ($3,000)">Custom Platform ($3,000)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="projectNotes">Project Goals & Key Bottlenecks</label>
+            <textarea id="projectNotes" rows="4" placeholder="Describe the manual process or software you want built..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary submit-btn" id="submitBtn">
+            <span>Submit Scope for Immediate Review</span>
+          </button>
+          
+          <div class="form-feedback" id="formFeedback"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 Apex Automation. Crafted with vanilla HTML, modern CSS & JavaScript.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
