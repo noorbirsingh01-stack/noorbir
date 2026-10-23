@@ -3,190 +3,417 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>noorbir.co | Systems & AI Services</title>
+  <title>noorbir.co | Systems Architecture & Automation Engineering</title>
+  <meta name="description" content="Engineering lab designing zero-latency lead infrastructure, connected automation pipelines, and custom web software for high-ticket service firms.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- NAVIGATION HEADER -->
-  <header class="header">
-    <div class="container header-container">
-      <div class="logo">
-        <span class="logo-icon"></span>
-        <span class="logo-text">noorbir<strong>.co</strong></span>
+  <!-- TOP TECHNICAL STATUS BEACON -->
+  <aside class="status-bar" aria-label="System Status">
+    <div class="container status-bar-inner">
+      <div class="status-indicator">
+        <span class="status-dot"></span>
+        <span class="status-code">SYS_STATUS: OPTIMAL</span>
       </div>
-      <nav class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#intake" class="nav-cta">Book Discovery</a>
+      <div class="status-meta">
+        <span>GLOBAL DISPATCH LATENCY: <strong>&lt; 850MS</strong></span>
+        <span class="divider">/</span>
+        <span>INFRASTRUCTURE: <strong>DISTRIBUTED EDGE</strong></span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- NAVIGATION -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="noorbir.co home">
+        <span class="logo-mark">noorbir</span><span class="logo-domain">.co</span>
+      </a>
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="#simulator" class="nav-link">Architecture Simulator</a>
+        <a href="#calculator" class="nav-link">Revenue Impact</a>
+        <a href="#specifications" class="nav-link">System Specs</a>
+        <a href="#inquiry" class="btn btn-primary btn-sm">Request Technical Audit</a>
       </nav>
     </div>
   </header>
 
   <main>
     <!-- HERO SECTION -->
-    <section class="hero">
-      <div class="container hero-content">
-        <span class="badge">Accelerated Business Delivery</span>
-        <h1 class="hero-title">Automate Your Operations.<br><span class="gradient-text">Reclaim 20+ Hours Every Week.</span></h1>
-        <p class="hero-subtitle">We design and deploy custom n8n workflows, headless stores, and Supabase client portals that replace manual busywork with reliable software.</p>
-        <div class="hero-actions">
-          <a href="#pricing" class="btn btn-primary">View Solution Tiers</a>
-          <a href="#intake" class="btn btn-secondary">Request Free Audit</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRICING SECTION -->
-    <section id="pricing" class="pricing-section">
+    <section class="hero-section">
       <div class="container">
-        <div class="section-header">
-          <h2>Transparent Project Tiers</h2>
-          <p>Fixed-scope delivery. No surprise fees. Built to scale your business run-rate.</p>
-          
-          <!-- BILLING / PERIOD TOGGLE -->
-          <div class="billing-toggle">
-            <span class="toggle-label active" id="label-project">One-Time Project</span>
-            <button class="toggle-switch" id="billingToggle" aria-label="Toggle pricing mode"></button>
-            <span class="toggle-label" id="label-retainer">Monthly Retainer <span class="discount-pill">Save 20%</span></span>
+        <div class="hero-header">
+          <div class="tech-tag">ENGINEERING LAB // INFRASTRUCTURE & AUTOMATION</div>
+          <h1 class="hero-title">
+            Eliminate Lead Response Delay.<br>
+            <span class="text-contrast">Automate High-Ticket Conversions.</span>
+          </h1>
+          <p class="hero-lead">
+            We engineer connected automation pipelines and custom web architecture that capture inbound buyer inquiries, score project budgets, and trigger smartphone alerts in under 2 seconds.
+          </p>
+          <div class="hero-actions">
+            <a href="#simulator" class="btn btn-primary">Run Live Pipeline Simulator &darr;</a>
+            <a href="#calculator" class="btn btn-secondary">Calculate Revenue Leakage</a>
           </div>
         </div>
 
-        <div class="pricing-grid">
+        <!-- HERO COMPONENT 1: LIVE INTERACTIVE PIPELINE SIMULATOR -->
+        <div class="simulator-wrapper" id="simulator">
+          <div class="simulator-header">
+            <div class="sim-title-group">
+              <span class="sim-indicator"></span>
+              <h2>Interactive Execution Bus</h2>
+            </div>
+            <div class="sim-telemetry">
+              <span>LISTENER: <strong>POST /v1/inbound-webhook</strong></span>
+              <span class="telemetry-pill" id="telemetryState">STATE: STANDBY</span>
+            </div>
+          </div>
+
+          <div class="simulator-grid">
+            <!-- LEFT: TEST PAYLOAD DISPATCHER -->
+            <div class="panel form-panel">
+              <div class="panel-header">
+                <h3>1. Inbound Signal Dispatch</h3>
+                <span class="panel-badge">CLIENT TRIGGER</span>
+              </div>
+              <form id="simulatorForm" class="sim-form">
+                <div class="form-group">
+                  <label for="simName">Client / Prospect Name</label>
+                  <input type="text" id="simName" required value="Marcus Vance" autocomplete="off">
+                </div>
+                <div class="form-group">
+                  <label for="simEmail">Business Email</label>
+                  <input type="email" id="simEmail" required value="m.vance@vancecapital.io" autocomplete="off">
+                </div>
+                <div class="form-group">
+                  <label for="simBudget">Allocated Project Budget</label>
+                  <select id="simBudget">
+                    <option value="5000" selected>$5,000 USD (High Value)</option>
+                    <option value="2500">$2,500 USD (Standard Sprint)</option>
+                    <option value="10000">$10,000 USD (Enterprise Architecture)</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block" id="dispatchBtn">
+                  <svg class="btn-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  <span>Dispatch Inbound Signal</span>
+                </button>
+              </form>
+              <div class="telemetry-log" id="telemetryLog">
+                <div class="log-row sys">[SYS] Engine listener active on port 443. Awaiting signal.</div>
+              </div>
+            </div>
+
+            <!-- CENTER: DATA BUS TOPOLOGY (SVG PACKET TRANSMISSION) -->
+            <div class="panel topology-panel">
+              <div class="panel-header">
+                <h3>2. Node Transit Bus</h3>
+                <span class="panel-badge">ROUTING GRAPH</span>
+              </div>
+              <div class="topology-canvas">
+                <div class="node-box" id="nodeWebhook">
+                  <div class="node-state-indicator"></div>
+                  <span class="node-id">NODE_01</span>
+                  <strong>Webhook Ingestion</strong>
+                  <span class="node-time" id="timeWebhook">--</span>
+                </div>
+                <div class="bus-line">
+                  <div class="bus-pulse" id="pulse1"></div>
+                </div>
+                <div class="node-box" id="nodeSanitizer">
+                  <div class="node-state-indicator"></div>
+                  <span class="node-id">NODE_02</span>
+                  <strong>Payload Sanitizer</strong>
+                  <span class="node-time" id="timeSanitizer">--</span>
+                </div>
+                <div class="bus-line">
+                  <div class="bus-pulse" id="pulse2"></div>
+                </div>
+                <div class="node-box" id="nodeDatabase">
+                  <div class="node-state-indicator"></div>
+                  <span class="node-id">NODE_03</span>
+                  <strong>Cloud DB Insert</strong>
+                  <span class="node-time" id="timeDatabase">--</span>
+                </div>
+              </div>
+              <div class="bus-status-bar">
+                <span>TOTAL MEASURED LATENCY:</span>
+                <strong id="totalLatencyCounter">0.00 MS</strong>
+              </div>
+            </div>
+
+            <!-- RIGHT: SIMULATED EXECUTIVE PHONE HARDWARE -->
+            <div class="panel device-panel">
+              <div class="panel-header">
+                <h3>3. Executive Phone Alert</h3>
+                <span class="panel-badge">REAL-TIME PUSH</span>
+              </div>
+              <div class="device-chassis" id="deviceChassis">
+                <div class="device-speaker"></div>
+                <div class="device-screen" id="deviceScreen">
+                  <div class="device-clock" id="deviceClock">09:41</div>
+                  <div class="device-date">Wednesday, October 24</div>
+                  
+                  <!-- ALERT BANNER -->
+                  <div class="push-notification" id="pushNotification">
+                    <div class="push-header">
+                      <span class="push-app-tag">NOORBIR_ENGINE // PRIORITY</span>
+                      <span class="push-timestamp">NOW</span>
+                    </div>
+                    <div class="push-title" id="pushTitle">New Inbound Inquiry Detected</div>
+                    <div class="push-body" id="pushBody">
+                      Signal received. Auto-logged to database.
+                    </div>
+                  </div>
+
+                  <div class="device-hint" id="deviceHint">
+                    Hardware in standby mode. Trigger signal on left to view push arrival.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: REVENUE-LOSS CALCULATOR -->
+    <section class="calculator-section" id="calculator">
+      <div class="container">
+        <div class="section-heading">
+          <div class="tech-tag">FINANCIAL IMPACT MODEL</div>
+          <h2>Quantify the Cost of Response Latency</h2>
+          <p>
+            When an inbound buyer requests a consultation, waiting hours to respond drastically degrades close rates. Adjust the parameters below to calculate estimated monthly capital loss.
+          </p>
+        </div>
+
+        <div class="calc-card">
+          <div class="calc-inputs">
+            
+            <div class="slider-group">
+              <div class="slider-meta">
+                <label for="leadsRange">Monthly Qualified Inbound Inquiries</label>
+                <span class="slider-display" id="leadsValDisplay">40 leads / mo</span>
+              </div>
+              <input type="range" id="leadsRange" min="5" max="250" value="40" step="5">
+              <div class="range-labels">
+                <span>5</span><span>125</span><span>250</span>
+              </div>
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-meta">
+                <label for="dealRange">Average Customer Contract Value</label>
+                <span class="slider-display" id="dealValDisplay">$3,500 USD</span>
+              </div>
+              <input type="range" id="dealRange" min="500" max="20000" value="3500" step="500">
+              <div class="range-labels">
+                <span>$500</span><span>$10,000</span><span>$20,000+</span>
+              </div>
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-meta">
+                <label for="delayRange">Average Current Response Delay</label>
+                <span class="slider-display" id="delayValDisplay">2 to 4 Hours</span>
+              </div>
+              <input type="range" id="delayRange" min="1" max="4" value="3" step="1">
+              <div class="range-labels">
+                <span>&lt; 15 min</span><span>1 hour</span><span>2-4 hours</span><span>Next day</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="calc-result-panel">
+            <span class="calc-eyebrow">ESTIMATED MONTHLY CAPITAL DRAIN</span>
+            <div class="loss-number" id="calculatedLossDisplay">$29,400</div>
+            <span class="loss-currency">USD / MONTH</span>
+            <p class="calc-explanation" id="calcExplanation">
+              Based on empirical response decay benchmarks: responding after 2 hours decreases inbound qualification by an estimated 21%.
+            </p>
+            <div class="calc-cta-wrap">
+              <a href="#inquiry" class="btn btn-primary btn-block">Eliminate This Leakage &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: TECHNICAL ARCHITECTURE SPECIFICATIONS -->
+    <section class="specs-section" id="specifications">
+      <div class="container">
+        <div class="section-heading">
+          <div class="tech-tag">SYSTEMS ARCHITECTURE</div>
+          <h2>Engineered for High-Reliability Operations</h2>
+          <p>
+            We deploy isolated, self-hosted, or edge-native configurations with zero recurring third-party plugin bloat.
+          </p>
+        </div>
+
+        <div class="specs-grid">
           
-          <!-- TIER 1: STARTER AUTOMATION -->
-          <div class="pricing-card" data-tier="Starter Workflow">
-            <div class="card-header">
-              <span class="tier-pill">Tier 1</span>
-              <h3>Starter Automation</h3>
-              <p class="tier-desc">Ideal for small businesses drowning in manual lead management and calendar bookings.</p>
-              <div class="price-box">
-                <span class="currency">$</span>
-                <span class="price-amount" data-project="500" data-retainer="400">500</span>
-                <span class="price-period">/project</span>
-              </div>
-            </div>
-            <ul class="feature-list">
-              <li><span>✓</span> 1 Production n8n or Make.com Workflow</li>
-              <li><span>✓</span> Lead Capture Form & CRM Sync (Airtable / Sheets)</li>
-              <li><span>✓</span> Automated Instant Email / SMS Notification</li>
-              <li><span>✓</span> 7 Days Deployment Support</li>
+          <div class="spec-card">
+            <div class="spec-index">01 // INGESTION</div>
+            <h3>Deterministic Webhook Edge</h3>
+            <p>
+              Ultra-lightweight endpoint listeners deployed on distributed edge workers. Inbound payloads are cryptographically signed, validated, and normalized in under 15ms.
+            </p>
+            <ul class="spec-list">
+              <li>Rate-limiting protection</li>
+              <li>Payload schema sanitation</li>
+              <li>Instant 200 OK acknowledgment</li>
             </ul>
-            <button class="btn btn-outline select-tier-btn" data-plan="Starter Automation ($500)">Select Starter</button>
           </div>
 
-          <!-- TIER 2: GROWTH ENGINE (FEATURED) -->
-          <div class="pricing-card featured" data-tier="Growth Engine">
-            <div class="popular-ribbon">Most Popular</div>
-            <div class="card-header">
-              <span class="tier-pill tier-pill-accent">Tier 2</span>
-              <h3>Growth Engine</h3>
-              <p class="tier-desc">End-to-end integration across booking, customer intake, and automated billing.</p>
-              <div class="price-box">
-                <span class="currency">$</span>
-                <span class="price-amount" data-project="1,500" data-retainer="1,200">1,500</span>
-                <span class="price-period">/project</span>
-              </div>
-            </div>
-            <ul class="feature-list">
-              <li><span>✓</span> Up to 4 Multi-Step Automated Workflows</li>
-              <li><span>✓</span> Cal.com Custom White-Label Booking Integration</li>
-              <li><span>✓</span> Stripe / Payment Gateway Webhook Setup</li>
-              <li><span>✓</span> Error Alerting & Database Logging</li>
-              <li><span>✓</span> 14 Days Priority Support</li>
+          <div class="spec-card">
+            <div class="spec-index">02 // DISPATCH</div>
+            <h3>Zero-Delay Mobile Bus</h3>
+            <p>
+              Bypasses congested email relays by delivering prioritized push payloads straight to mobile devices via secure encrypted messaging bots.
+            </p>
+            <ul class="spec-list">
+              <li>Sub-second push delivery</li>
+              <li>High-value budget filtering</li>
+              <li>Direct one-tap client dialer</li>
             </ul>
-            <button class="btn btn-primary select-tier-btn" data-plan="Growth Engine ($1,500)">Select Growth</button>
           </div>
 
-          <!-- TIER 3: FULL ARCHITECTURE -->
-          <div class="pricing-card" data-tier="Custom Platform">
-            <div class="card-header">
-              <span class="tier-pill">Tier 3</span>
-              <h3>Custom Platform</h3>
-              <p class="tier-desc">Complete micro-SaaS or headless e-commerce store with authentication and database.</p>
-              <div class="price-box">
-                <span class="currency">$</span>
-                <span class="price-amount" data-project="3,000" data-retainer="2,400">3,000</span>
-                <span class="price-period">/project</span>
-              </div>
-            </div>
-            <ul class="feature-list">
-              <li><span>✓</span> Full Supabase Backend & Database Architecture</li>
-              <li><span>✓</span> Medusa.js E-Commerce or Custom Client Portal</li>
-              <li><span>✓</span> User Authentication, Roles & Protected Dashboards</li>
-              <li><span>✓</span> End-to-end API Integration & Deployment</li>
-              <li><span>✓</span> 30 Days Dedicated Maintenance & Warranty</li>
+          <div class="spec-card">
+            <div class="spec-index">03 // RETENTION</div>
+            <h3>Qualification Calendar Integration</h3>
+            <p>
+              Inquiries are immediately redirected to custom qualification gates where budget and timeline are established before calendar holds are reserved.
+            </p>
+            <ul class="spec-list">
+              <li>Zero unqualified discovery calls</li>
+              <li>Automated multi-timezone scheduling</li>
+              <li>Client-side .ICS sync</li>
             </ul>
-            <button class="btn btn-outline select-tier-btn" data-plan="Custom Platform ($3,000)">Select Platform</button>
+          </div>
+
+          <div class="spec-card">
+            <div class="spec-index">04 // PERSISTENCE</div>
+            <h3>Structured Cloud Storage</h3>
+            <p>
+              Every contact record is logged into relational PostgreSQL schemas or structured operational sheets, ensuring complete data ownership with zero platform lock-in.
+            </p>
+            <ul class="spec-list">
+              <li>Automated historical audit logs</li>
+              <li>No per-seat software taxes</li>
+              <li>100% exportable architecture</li>
+            </ul>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- INTAKE FORM SECTION -->
-    <section id="intake" class="intake-section">
-      <div class="container intake-container">
-        <div class="intake-info">
-          <span class="badge">Direct Project Kickoff</span>
-          <h2>Ready to Deploy Your Solution?</h2>
-          <p>Fill out the project scope below. We review every requirement and return an actionable execution roadmap within 24 hours.</p>
-          <div class="trust-metrics">
-            <div class="metric-item">
-              <strong>48-72h</strong>
-              <span>Rapid Prototype Delivery</span>
+    <!-- SECTION 4: TECHNICAL INQUIRY & AUDIT INTAKE -->
+    <section class="inquiry-section" id="inquiry">
+      <div class="container inquiry-container">
+        <div class="inquiry-meta">
+          <div class="tech-tag">DIRECT CONSULTATION INTAKE</div>
+          <h2>Request a Technical System Audit</h2>
+          <p>
+            Provide your business website and primary operational bottleneck. We will run an automated latency and form evaluation, returning a confidential technical review within 24 business hours.
+          </p>
+          <div class="security-badges">
+            <div class="sec-item">
+              <span class="sec-dot"></span>
+              <span>100% Non-Disclosure Guaranteed</span>
             </div>
-            <div class="metric-item">
-              <strong>100%</strong>
-              <span>Code Ownership</span>
+            <div class="sec-item">
+              <span class="sec-dot"></span>
+              <span>Zero Keystroke / Invasive Trackers</span>
+            </div>
+            <div class="sec-item">
+              <span class="sec-dot"></span>
+              <span>Direct Engineering Assessment</span>
             </div>
           </div>
         </div>
 
-        <form class="intake-form" id="leadForm">
-          <div class="form-group">
-            <label for="clientName">Full Name *</label>
-            <input type="text" id="clientName" required placeholder="Alex Mercer">
-          </div>
+        <div class="inquiry-form-card">
+          <form id="auditIntakeForm" class="audit-form" action="https://formspree.io/f/xbldwypg" method="POST">
+            <div class="form-group">
+              <label for="contactName">Principal / Lead Name *</label>
+              <input type="text" id="contactName" name="name" required placeholder="Elena Rostova">
+            </div>
 
-          <div class="form-group">
-            <label for="clientEmail">Business Email *</label>
-            <input type="email" id="clientEmail" required placeholder="alex@mercergrowth.com">
-          </div>
+            <div class="form-group">
+              <label for="contactEmail">Business Email *</label>
+              <input type="email" id="contactEmail" name="email" required placeholder="elena@rostovagrowth.com">
+            </div>
 
-          <div class="form-group">
-            <label for="selectedTier">Selected Tier *</label>
-            <select id="selectedTier" required>
-              <option value="Starter Automation ($500)">Starter Automation ($500)</option>
-              <option value="Growth Engine ($1,500)" selected>Growth Engine ($1,500)</option>
-              <option value="Custom Platform ($3,000)">Custom Platform ($3,000)</option>
-            </select>
-          </div>
+            <div class="form-group">
+              <label for="contactDomain">Corporate Website URL *</label>
+              <input type="url" id="contactDomain" name="domain" required placeholder="https://rostovagrowth.com">
+            </div>
 
-          <div class="form-group">
-            <label for="projectNotes">Project Goals & Key Bottlenecks</label>
-            <textarea id="projectNotes" rows="4" placeholder="Describe the manual process or software you want built..."></textarea>
-          </div>
+            <div class="form-group">
+              <label for="contactBottleneck">Primary Operational Pain Point *</label>
+              <textarea id="contactBottleneck" name="bottleneck" rows="3" required placeholder="Our team takes 3 to 4 hours to follow up on consultation inquiries..."></textarea>
+            </div>
 
-          <button type="submit" class="btn btn-primary submit-btn" id="submitBtn">
-            <span>Submit Scope for Immediate Review</span>
-          </button>
-          
-          <div class="form-feedback" id="formFeedback"></div>
-        </form>
+            <!-- CLOUDFLARE TURNSTILE INTEGRATION PLACEHOLDER -->
+            <div class="turnstile-box">
+              <span class="turnstile-icon">🛡️</span>
+              <span class="turnstile-text">Protected by Cloudflare Turnstile • Automated bot prevention active</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-lg" id="submitInquiryBtn">
+              Transmit Audit Request &rarr;
+            </button>
+            <div class="form-status-msg" id="formStatusMsg"></div>
+          </form>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-content">
-      <p>&copy; 2026 Apex Automation. Crafted with vanilla HTML, modern CSS & JavaScript.</p>
+  <!-- LEGAL & ARCHITECTURAL FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="brand-logo">
+          <span class="logo-mark">noorbir</span><span class="logo-domain">.co</span>
+        </a>
+        <p class="footer-desc">
+          Bespoke automation infrastructure and systems engineering for high-ticket service enterprises.
+        </p>
+        <span class="b2b-notice">Commercial B2B Services Only &bull; 18+ Business Disclosures Apply</span>
+      </div>
+
+      <div class="footer-nav">
+        <div class="nav-col">
+          <h4>Navigation</h4>
+          <a href="#simulator">Simulator</a>
+          <a href="#calculator">Loss Calculator</a>
+          <a href="#specifications">Specifications</a>
+          <a href="#inquiry">Technical Audit</a>
+        </div>
+        <div class="nav-col">
+          <h4>Legal & Compliance</h4>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="404.html">HTTP 404 Route</a>
+          <span class="cookie-free-pill">Zero Cookie Telemetry</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container footer-sub">
+      <p>&copy; 2026 noorbir.co. All rights reserved. Self-hosted typography, distributed edge execution.</p>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
